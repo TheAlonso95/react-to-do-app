@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import React from 'react';
 
 export const ToDo = ({ toDo, toDos, setToDos }) => {
@@ -6,7 +7,8 @@ export const ToDo = ({ toDo, toDos, setToDos }) => {
     }
 
     const completeToDo = () => {
-        // setToDos()
+        const indexToUpdate = toDos?.findIndex(({ id }) => id === toDo.id);
+        setToDos(R.update(indexToUpdate, {...toDo, completed: true})(toDos));
     }
     return (
         <div className="todo">
