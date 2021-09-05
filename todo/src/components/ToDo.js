@@ -1,21 +1,17 @@
 import React from 'react';
 
-const Form = () => {
-    return(
-        <form>
-            <input type="text" className="todo-input" />
-            <button type="submit" className="todo-buton">
-                <i className="fas fas-plus-square"></i> 
+export const ToDo = ({ toDo }) => {
+    return (
+        <div className="todo">
+            <li className="todo-item">{toDo.text}</li>
+            <button className="complete-btn">
+                <i className="fas fa-check">Complete</i>
             </button>
-            <div className="select">
-                <select name="todos" className="filter-todo">
-                    <option value="all">All</option>
-                    <option value="completed">Completed</option>
-                    <option value="uncompleted">Uncompleted</option>
-                </select>
-            </div>
-        </form>
+            <button className="trash-btn">
+                <i className="fas fa-trash">x</i>
+            </button>
+        </div>
     );
 }
 
-export default Form;
+export default ToDo;
