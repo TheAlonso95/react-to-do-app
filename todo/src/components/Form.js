@@ -7,7 +7,7 @@ const Form = ({ setInputText, toDos, setToDos, inputText }) => {
 
     const addTodo = (e) => {
         e.preventDefault();
-        setToDos([...toDos, { text: inputText, completed: false, id: toDos?.length || 0 + 1}])
+        setToDos([...toDos, { text: inputText, completed: false, id: toDos?.length || 0 + 1 + Math.random() }])
         setInputText("");
     }
 
