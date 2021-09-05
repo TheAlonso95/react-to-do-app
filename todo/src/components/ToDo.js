@@ -12,7 +12,7 @@ export const ToDo = ({ toDo, toDos, setToDos }) => {
     }
     return (
         <div className="todo">
-            <li className="todo-item">{toDo.text}</li>
+            <li className={`todo-item ${toDo.completed ? 'completed' : ''}`}>{toDo.text}</li>
             <button onClick={completeToDo} className="complete-btn">
                 <i className="fas fa-check">Complete</i>
             </button>
